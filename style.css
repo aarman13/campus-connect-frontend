@@ -1,0 +1,505 @@
+:root {
+    /* Main brand colors - Sage Green Palette */
+    --primary-green: #6c8672;   /* Darkest green */
+    --accent-green: #a7bcad;    /* Middle sage green */
+    --soft-green: #d1dbd2;      /* Light sage green */
+    --background-mint: #f1f3f0; /* Lightest mint-white */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-mint);
+    color: #334139; /* Dark green-tinted charcoal for readability */
+}
+html {
+    scroll-behavior: smooth;
+    /* This ensures the fixed navbar doesn't cover the top of your section */
+    scroll-padding-top: 75px; 
+}
+
+/* 1. Hero & Header */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('images/hero_img1.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    position: relative;
+    color: white;
+}
+.navbar-brand, .nav-link {
+    color: var(--primary-green) !important;
+}
+
+/* 2. Overrides for Bootstrap Buttons (Fixes the Blue) */
+.btn-primary, .community-box .btn-primary {
+    background-color: var(--primary-green) !important;
+    border: none !important;
+}
+
+.btn-primary:hover, .community-box .btn-primary:hover {
+    background-color: var(--accent-green) !important;
+}
+
+.btn-outline-primary {
+    color: var(--primary-green) !important;
+    border-color: var(--primary-green) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-green) !important;
+    color: white !important;
+}
+
+/* Update the View All button/link */
+.btn-link {
+    color: var(--primary-green) !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    transition: all 0.3s ease; /* Adds smooth motion */
+    display: inline-block; /* Required for the slide effect to work */
+}
+
+/* Add this Hover state */
+.btn-link:hover {
+    color: var(--accent-green) !important; /* Changes to lighter sage */
+    transform: translateX(8px); /* Slides the button slightly to the right */
+    text-decoration: none !important;
+}
+
+
+/* 3. Stats Bar & Layout */
+.mt-n5 {
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+}
+
+/* 4. Calendar & Announcements */
+.bg-navy {
+    background-color: var(--primary-green) !important; 
+}
+
+.calendar-table th {
+    font-size: 0.8rem;
+    padding-bottom: 15px;
+}
+
+.calendar-table td {
+    padding: 15px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.calendar-table td:hover {
+    background-color: var(--soft-green);
+}
+
+/* This highlights today (automatic) */
+.today {
+    background-color: var(--accent-green) !important;
+    color: white !important;
+    border-radius: 5px;
+}
+
+/* Add this to highlight manual event dates */
+.calendar-event {
+    background-color: var(--soft-green) !important;
+    color: var(--primary-green) !important;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Use a specific class for event days only */
+.event-marked {
+    background-color: var(--accent-green) !important;
+    color: white !important;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.event-marked::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background-color: #ffd600; /* Yellow dot for event */
+    border-radius: 50%;
+}
+
+/* 5. Category Boxes */
+.category-box {
+    background: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #eee !important;
+}
+
+.category-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-green) !important; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+}
+
+.category-box h5 {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.text-info {
+    color: var(--primary-green) !important; 
+}
+
+.rounded-4 {
+    border-radius: 1.5rem !important;
+}
+
+/* 6. Gallery & Community */
+.bg-section-dark {
+    background-color: #334139 !important; /* Dark charcoal green */
+}
+
+.gallery-img {
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+.gallery-img {
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05); /* Makes the image grow slightly when hovered */
+    filter: brightness(90%);
+}
+.community-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.community-box p {
+    color: #ffffff !important; /* Fixed: Added # */
+    opacity: 0.9; 
+}
+
+.community-box .form-control {
+    font-size: 0.9rem;
+    height: 45px;
+}
+
+.social-icons i, .social-links i {
+    color: white;
+    transition: color 0.2s;
+}
+
+.social-icons i:hover, .social-links i:hover {
+    color: #ffd600; 
+}
+
+/* 7. Footer */
+footer {
+    background-color: #12141d !important;
+}
+
+footer h5, footer h6 {
+    letter-spacing: 0.5px;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-green) !important; 
+}
+
+hr.border-secondary {
+    opacity: 0.2;
+}
+/* Ensure modal header matches your bg-navy class */
+.modal-header.bg-navy {
+    background-color: var(--primary-green) !important;
+}
+
+.modal-content {
+    background-color: var(--background-mint);
+}
+/* Footer Link Hover Effect */
+.footer-link:hover {
+    color: var(--accent-green) !important;
+    padding-left: 5px; /* Slight movement effect */
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover i {
+    color: var(--accent-green);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+}
+/*login page*/
+/* Color Palette Variables */
+:root {
+    --primary-green: #6C8672;   /* Darkest green */
+    --accent-green: #A7BCAD;    /* Middle sage green */
+    --soft-green: #D1DBD2;      /* Light sage green */
+    --background-mint: #F1F3F0; /* Lightest mint-white */
+}
+
+/* Login page only */
+.login-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Vertical and Horizontal Centering */
+.auth-body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;    /* Centers vertically */
+    justify-content: center; /* Centers horizontally */
+    background-color: var(--background-mint);
+    margin: 0;
+}
+
+/* Card Styling */
+.auth-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 500px; /* Limits the width so it looks professional */
+}
+
+/* Ensures labels don't get squished */
+.text-start {
+    text-align: left !important;
+}
+.btn-signin {
+    background-color: #6c8672; /* Your --primary-green */
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 600;
+}
+/* Card Container */
+.login-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Graduation Icon Styling */
+.icon-circle {
+    background-color: var(--primary-green);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 24px;
+}
+
+/* Form Inputs */
+.form-control {
+    background-color: var(--background-mint);
+    border: 1px solid var(--soft-green);
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 0.2rem rgba(108, 134, 114, 0.25);
+    outline: none;
+}
+
+/* Action Button */
+.btn-signin {
+    background-color: var(--primary-green);
+    border: none;
+    color: white;
+    padding: 0.75rem;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-signin:hover {
+    background-color: #5a705f;
+}
+
+/* Links & Navigation */
+.links {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.links a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-home {
+    display: block;
+    margin-top: 2rem;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+/* =========================================
+   5. CONTACT PAGE SPECIFIC (contact.html)
+   ========================================= */
+.icon-box {
+    background-color: var(--soft-green);
+    color: var(--primary-green);
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+#contactForm .form-control:focus {
+    background-color: #fff !important;
+    border: 1px solid var(--accent-green) !important;
+    box-shadow: none;
+}
+.filter-btn {
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #444;
+}
+
+.filter-btn.active {
+    background-color: #4f6d52 !important;
+    color: white !important;
+    border-color: #4f6d52 !important;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    color: #333;
+}
+/* Custom style for the Sign Up button */
+.btn-signup {
+    background-color: #4f6d52 !important;
+    color: white !important;
+    border: none !important;
+    font-weight: 500;
+    padding: 8px 20px;
+}
+
+.btn-signup:hover {
+    background-color: #3e5641 !important; /* Slightly darker green on hover */
+    color: white !important;
+}
+/* Event page */
+.event-card-item .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.event-card-item .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Fix for the badges to use your project green */
+.text-success {
+    color: #4f6d52 !important;
+}
+
+/* Ensure images don't look stretched */
+.card-img-top {
+    border-bottom: 1px solid #eee;
+}
+
+/* Spacing for the search bar icons */
+.input-group-text {
+    border-left: none;
+    color: #4f6d52;
+}
+#eventSearch {
+    border-right: none;
+}
+/* About Page Specifics */
+
+.hero-small {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('images/Aboutus_img6.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.text-primary {
+    color: var(--primary-green) !important;
+}
+.about-img {
+    height: 420px;         
+    width: 100%;            
+    object-fit: cover;      
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.03);  /* slight zoom */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.bg-navy {
+    background-color: var(--primary-green) !important; 
+}
+.card.bg-transparent {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.card.bg-transparent:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: white !important;
+}
+.rounded-4 {
+    border-radius: 1.5rem !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: white;
+}
