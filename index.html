@@ -6,7 +6,7 @@
     <title>CampusEvents - Smart System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,9 +19,14 @@
         </a>
 
         <!-- Toggler Button (for mobile) -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
 
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -40,7 +45,6 @@
                 </li>
                 <li class="nav-item">
     <a href="signup.html" class="btn btn-primary">Sign Up</a>
-</li>
                </li>
             </ul>
         </div>
@@ -88,9 +92,8 @@
    <section id="events" class="container my-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold">Event Categories</h2>
-        <a href="events.html" class="btn btn-link text-decoration-none fw-bold" style="color: #4f6d52;">
+        <a href="events.html" class="btn btn-link text-decoration-none fw-bold">
     View All <i class="fas fa-chevron-right small ms-1"></i>
-</a>
 </a>
     </div>
 
@@ -140,8 +143,13 @@
                         <h4 class="fw-bold mb-0">Upcoming Events</h4>
                         <div class="calendar-controls">
                             <span class="me-3 fw-bold">March 2026</span>
-                            <button class="btn btn-sm btn-light"><i class="fas fa-chevron-left"></i></button>
-                            <button class="btn btn-sm btn-light"><i class="fas fa-chevron-right"></i></button>
+                            <button class="btn btn-sm btn-light" aria-label="Previous month">
+    <i class="fas fa-chevron-left"></i>
+</button>
+
+<button class="btn btn-sm btn-light" aria-label="Next month">
+    <i class="fas fa-chevron-right"></i>
+</button>
                         </div>
                     </div>
                     
@@ -245,15 +253,11 @@
                         <input type="email" class="form-control bg-light border-0" placeholder="Enter Your Email">
                         <button class="btn btn-primary px-3" type="button">Subscribe</button>
                     </div>
-                    <div class="social-icons pt-2">
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-
+                 <div class="social-icons pt-2">
+    <a href="#" class="text-white me-3" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#" class="text-white me-3" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#" class="text-white me-3" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+</div>
         </div>
     </div>
 </section>
@@ -279,11 +283,11 @@
                 <h6 class="fw-bold mb-3">Contact</h6>
                 <p class="small text-secondary mb-1">Email: events@smartcollege.edu</p>
                 <p class="small text-secondary">Phone: +91 6677889900</p>
-                <div class="social-links mt-3">
-                    <a href="#" class="text-white me-3 social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white me-3 social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white social-icon"><i class="fab fa-instagram"></i></a>
-                </div>
+               <div class="social-icons pt-2">
+    <a href="#" class="text-white me-3" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#" class="text-white me-3" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#" class="text-white me-3" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+</div>
             </div>
 
         </div>
@@ -301,7 +305,10 @@
         <div class="modal-content rounded-4">
             <div class="modal-header">
                 <h5 class="modal-title" id="eventTitle">Event Title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close">
+</button>
             </div>
             <div class="modal-body text-center">
                 <img id="eventImage" src="" class="img-fluid rounded mb-3" alt="">

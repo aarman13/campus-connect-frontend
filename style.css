@@ -245,7 +245,7 @@ hr.border-secondary {
     transition: all 0.3s ease;
 }
 
-.social-icon:hover i {
+.social-icon a:hover i {
     color: var(--accent-green);
     transform: translateY(-3px);
     transition: all 0.3s ease;
